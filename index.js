@@ -14,11 +14,13 @@ memeModalCloseBtn.addEventListener("click", closeModal);
 getImageBtn.addEventListener("click", renderCat);
 
 addEventListener("click", (e) => {
-  const imgEl = document.querySelector(".cat-img");
+  const imgEl = document.querySelectors(".cat-img");
+  const memeModalInner = document.getElementById("meme-modal-inner");
   if (
     memeModal.style.display === "flex" &&
     e.target !== memeModal &&
     e.target !== imgEl &&
+    e.target !== memeModalInner &&
     e.target !== getImageBtn
   ) {
     closeModal();
@@ -38,27 +40,32 @@ function closeModal() {
 }
 
 function renderCat() {
-  const catObject = getSingleCatObject();
-  memeModalInner.innerHTML = `
-        <img 
-        class="cat-img" 
-        src="./images/${catObject.image}"
-        alt="${catObject.alt}"
-        >
-        `;
+  const catObjectArray = getMatchingCatsArray();
+  memeModalInner.innerHTML = ``;
+  for (let cat of catObjectArray) {
+    memeModalInner.innerHTML += `
+    <img 
+    class="cat-img" 
+    src="./images/${cat.image}"
+    alt="${cat.alt}"
+    >
+    `;
+  }
+  // const catObject = getSingleCatObject();
+
   memeModal.style.display = "flex";
 }
 
-function getSingleCatObject() {
-  const catsArray = getMatchingCatsArray();
+// function getSingleCatObject() {
+//   const catsArray = getMatchingCatsArray();
 
-  if (catsArray.length === 1) {
-    return catsArray[0];
-  } else {
-    const randomNumber = Math.floor(Math.random() * catsArray.length);
-    return catsArray[randomNumber];
-  }
-}
+//   if (catsArray.length === 1) {
+//     return catsArray[0];
+//   } else {
+//     const randomNumber = Math.floor(Math.random() * catsArray.length);
+//     return catsArray[randomNumber];
+//   }
+// }
 
 function getMatchingCatsArray() {
   if (document.querySelector('input[type="radio"]:checked')) {
