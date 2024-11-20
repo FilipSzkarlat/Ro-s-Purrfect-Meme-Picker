@@ -14,12 +14,12 @@ memeModalCloseBtn.addEventListener("click", closeModal);
 getImageBtn.addEventListener("click", renderCat);
 
 addEventListener("click", (e) => {
-  const imgEl = document.querySelectors(".cat-img");
   const memeModalInner = document.getElementById("meme-modal-inner");
+  console.log(e.target.classList);
   if (
     memeModal.style.display === "flex" &&
     e.target !== memeModal &&
-    e.target !== imgEl &&
+    e.target.classList.value !== "cat-img" &&
     e.target !== memeModalInner &&
     e.target !== getImageBtn
   ) {
