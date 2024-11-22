@@ -4,6 +4,11 @@ body {
   font-family: "Karla", sans-serif;
 }
 
+main {
+  background: url('images/pumpkin.png') no-repeat 25% center;
+  background-size: 200px; 
+}
+
 /*typography*/
 
 h1,
@@ -14,7 +19,7 @@ h3 {
 
 h1,
 h2 {
-  color: #eed6d3;
+  color: #eaf2ef;
   margin: 0;
 }
 
@@ -28,12 +33,13 @@ h2 {
 
 h3 {
   margin: 25px;
+  color: #912f56;
 }
 
 /* layout */
 
 header {
-  background-color: #67595e;
+  background-color: #521945;
 }
 
 .header-inner {
@@ -45,8 +51,8 @@ header {
   padding: 10px 0 0 0;
 }
 
-.pumpkin-img {
-  width: 80px;
+.ro-img {
+  width: 120px;
 }
 
 .controls-container {
@@ -80,8 +86,8 @@ label {
 }
 
 .highlight {
-  background-color: #fff0ee;
-  color: #bd301d;
+  background-color: #912f56;
+  color: #eaf2ef;
   font-weight: bold;
 }
 a .radio:last-child {
@@ -105,13 +111,19 @@ input[type="radio"] {
 }
 
 .get-image-btn {
-  background-color: #67595e;
-  color: #eed6d3;
+  background-color: #521945;
+  color: #eaf2ef;
   padding: 15px 19px;
   font-size: 24px;
   border: none;
   border-radius: 5px;
   margin-bottom: 8px;
+  transition: all 1s ease;
+}
+
+.get-image-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 /* modal */
@@ -140,7 +152,7 @@ input[type="radio"] {
 }
 
 .cat-img:hover {
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  box-shadow: 0 0 2px 1px rgba(145, 47, 86, 0.5);
 }
 
 .meme-modal-close-btn {
