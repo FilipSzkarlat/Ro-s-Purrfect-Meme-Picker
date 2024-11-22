@@ -14,6 +14,17 @@ memeModalCloseBtn.addEventListener("click", closeModal);
 getImageBtn.addEventListener("click", renderCat);
 
 addEventListener("click", (e) => {
+  if (e.target.classList.value === "cat-img") {
+    e.target.style.transform = "scale(4)";
+    e.target.style.zIndex = 2;
+    setTimeout(() => {
+      e.target.style.transform = "scale(1)";
+      e.target.style.zIndex = 1;
+    }, 4000);
+  }
+});
+
+addEventListener("click", (e) => {
   const memeModalInner = document.getElementById("meme-modal-inner");
   console.log(e.target.classList);
   if (
